@@ -1,0 +1,25 @@
+{
+  "env": {
+    "devkitpro" : "/opt/devkitpro",
+    "devkitarm" : "${devkitpro}/devkitARM",
+    "ctrpflib" : "${devkitpro}/libctrpf",
+    "ctrulib" : "${devkitpro}/libctru"
+  },
+  "configurations": [
+    {
+      "name": "Atom",
+      "includePath":
+      [
+          "${workspaceFolder}/Atom/",
+          "${ctrpflib}/include/**",
+          "${ctrulib}/include/**"
+      ],
+      "defines": ["ARM11", "_3DS"],
+      "cStandard": "c11",
+      "cppStandard": "c++20",
+      "compilerPath": "${devkitarm}/bin/arm-none-eabi-g++",
+      "intelliSenseMode": "gcc-arm"
+    }
+  ],
+  "version": 4
+}
