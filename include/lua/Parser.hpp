@@ -220,13 +220,29 @@ class Parser {
 
   Expr *p_bit_xor();
 
-  Expr *p_bit_or();
+  Expr *p_bit_or() {
+    auto x = p_bit_and();
+    if (!x) return nullptr;
+
+    while (!is_end()) {
+      auto op = cur;
+      if (eat(TokOperators::BitOr)) {
+        if (auto y = p_bit_and())
+          x = ast::Terms::make(ast::ExprKind::BitOr, op, x, y);
+        else
+          return (delete x), nullptr;
+      } else
+        break;
+    }
+
+    return x;
+  }
 
   Expr *p_log_and();
 
   Expr *p_log_or();
 
-  Expr *p_expr() { return p_bit_and(); }
+  Expr *p_expr() { return p_bit_or(); }
 
   auto p_ifs_else(Token *elsetok) -> ast::Scope * {
     auto body = new ast::Scope(elsetok);

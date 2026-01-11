@@ -126,6 +126,12 @@ class ASTEvaluator {
             result.v_bool = Controller::IsKeysDown(key);
             return result;
           }
+          else if (name == "check_addr") {
+            u32 addr = args[0].v_u32;
+            result.type = TypeKind::Bool;
+            result.v_bool = Process::CheckAddress(addr);
+            return result;
+          }
           else if (name == "notify") {
             std::string tmp;
             for (auto &&x : args) tmp += x.to_str();
@@ -152,16 +158,19 @@ class ASTEvaluator {
             auto x = eval_expr(term);
             switch (expr->kind) {
               case ExprKind::Add:
-                val = add_object(val, x);
+                add_object(val, x);
                 break;
               case ExprKind::Sub:
-                val = sub_object(val, x);
+                sub_object(val, x);
                 break;
               case ExprKind::LShift:
-                val = left_shift_object(val, x);
+                left_shift_object(val, x);
                 break;
               case ExprKind::BitAnd:
-                val = bit_and_object(val, x);
+                bit_and_object(val, x);
+                break;
+              case ExprKind::BitOr:
+                bit_or_object(val, x);
                 break;
 
               default:
@@ -242,6 +251,19 @@ class ASTEvaluator {
         break;
       case TypeKind::U32:
         if (b.type.kind == TypeKind::U32) a.v_u32 &= b.v_u32;
+        break;
+    }
+    return a;
+  }
+
+  auto bit_or_object(Object &a, Object &b) -> Object &
+  {
+    switch (a.type.kind) {
+      case TypeKind::I32:
+        if (b.type.kind == TypeKind::I32) a.v_i32 |= b.v_i32;
+        break;
+      case TypeKind::U32:
+        if (b.type.kind == TypeKind::U32) a.v_u32 |= b.v_u32;
         break;
     }
     return a;
