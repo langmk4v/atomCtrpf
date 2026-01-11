@@ -1,7 +1,8 @@
 #pragma once
 
+#include <algorithm>
+
 #include <CTRPluginFramework/Menu/MenuEntry.hpp>
-#include <unordered_map>
 
 #include "AST.hpp"
 #include "Object.hpp"
@@ -12,19 +13,54 @@ class ASTEvaluator {
   using ExprKind = ast::ExprKind;
   using StmtKind = ast::StmtKind;
 
+  struct VarPairMap {
+    StringID  name;
+    Object*   object;
+
+    VarPairMap(StringID n, Object* o)
+      : name(n), object(o) { }
+  };
+
+  struct VarStorage {
+    std::vector<VarPairMap> storage;
+
+    auto find(StringID name) {
+      return std::find_if(storage.begin(), storage.end(), [name] (VarPairMap& map) -> bool {
+        return map.name == name;
+      });
+    }
+
+    auto contains(StringID name) -> bool {
+      return find(name) != storage.end();
+    }
+
+    auto get(StringID name) -> Object*& {
+      if (auto iter = find(name); iter != storage.end())
+        return iter->object;
+
+      return append(name).object;
+    }
+
+    auto append(StringID name, Object* obj = nullptr) -> VarPairMap& {
+      return storage.emplace_back(name, obj);
+    }
+  };
+
   SourceFile *source;
 
   MenuEntry *entry;
 
-  std::unordered_map<StringID, Object *> globals;
+  VarStorage globals;
 
   Object *get_global(StringID name)
   {
     if (!globals.contains(name)) {
-      globals[name] = new Object(TypeKind::None);
+      return
+        globals.append(name, new Object(TypeKind::None))
+          .object;
     }
 
-    return globals[name];
+    return globals.get(name);
   }
 
  public:
@@ -100,7 +136,8 @@ class ASTEvaluator {
 
         std::vector<Object> args;
 
-        for (auto &&x : cf->args) args.push_back(eval_expr(x));
+        for (auto &&x : cf->args)
+          args.push_back(eval_expr(x));
 
         Object result;
 
@@ -122,8 +159,7 @@ class ASTEvaluator {
           else if (name == "is_pressed") {
             u32 key = args[0].v_u32;
             result.type = TypeKind::Bool;
-            Controller::Update();
-            result.v_bool = Controller::IsKeysDown(key);
+            result.v_bool = key != 0 & Controller::IsKeysDown(key);
             return result;
           }
           else if (name == "check_addr") {
