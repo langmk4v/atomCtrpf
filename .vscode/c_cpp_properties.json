@@ -7,14 +7,18 @@
   },
   "configurations": [
     {
-      "name": "Atom",
+      "name": "luactrpf",
       "includePath":
       [
-          "${workspaceFolder}/Atom/",
+          "${workspaceFolder}/include/",
           "${ctrpflib}/include/**",
           "${ctrulib}/include/**"
       ],
-      "defines": ["ARM11", "_3DS"],
+      "defines": [
+        "ARM11",
+        "_3DS",
+        "_LUA_DEBUG_"
+      ],
       "cStandard": "c11",
       "cppStandard": "c++20",
       "compilerPath": "${devkitarm}/bin/arm-none-eabi-g++",

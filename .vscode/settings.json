@@ -9,5 +9,6 @@
         "**/release" : true,
         "**/*.elf" : true,
         "**/*.3gx" : true
-    }
+    },
+    "editor.lineNumbers": "off"
 }

@@ -44,9 +44,13 @@ logger.setLevel(logging.INFO)
 # 接続先サーバーのホスト名
 hostname = "192.168.3.13" 
 # アップロードするファイルパス
-upload_src_path = "./plugin.3gx" 
+upload_src_path = "./acnl.3gx" 
 # アップロード先のファイルパス（STORはファイルをアップロードするためのFTPコマンドなので必要です。）
 upload_dst_path = "STOR /luma/plugins/0004000000086200/acnl.3gx" 
+
+upload_src_path2 = "./test.zlua" 
+upload_dst_path2 = "STOR /luma/plugins/0004000000086200/test.zlua" 
+
 # サーバーのユーザー名
 username = "" 
 # サーバーのログインパスワード
@@ -57,4 +61,5 @@ timeout = 50
 
 logger.info("===START FTP===")
 ftp_upload(hostname, username, password, port, upload_src_path, upload_dst_path, timeout)
+ftp_upload(hostname, username, password, port, upload_src_path2, upload_dst_path2, timeout)
 logger.info("===FINISH FTP===")

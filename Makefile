@@ -7,12 +7,14 @@ include $(DEVKITARM)/3ds_rules
 
 CTRPFLIB	?=	$(DEVKITPRO)/libctrpf
 
-TARGET		:= 	plugin
+TARGET		:= 	acnl
 
 BUILD		:= 	build
 INCLUDES	:= 	include
 				
-SOURCES 	:= 	src
+SOURCES 	:=	\
+		src	\
+		src/lua
 
 PSF 		:= 	plgInfo
 
@@ -68,6 +70,9 @@ export LIBPATHS	:=	$(foreach dir,$(LIBDIRS),-L $(dir)/lib)
 
 #---------------------------------------------------------------------------------
 all: $(BUILD)
+
+#test:
+#	g++ -std=gnu++20 -Iinclude -Wall -Wextra $(wildcard ./src/lua/*.cpp) ./test.cpp -o a.out
 
 $(BUILD):
 	@[ -d $@ ] || mkdir -p $@

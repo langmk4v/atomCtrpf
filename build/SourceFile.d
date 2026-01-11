@@ -1,5 +1,9 @@
-plugin.o: /home/langmk4v/RingoCTRPF3gx/PluginFolder/src/plugin.cpp \
- /home/langmk4v/RingoCTRPF3gx/PluginFolder/Atom/Program.hpp \
+SourceFile.o: /home/langmk4v/luactrpf/src/lua/SourceFile.cpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Graphics.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Graphics/Color.hpp \
+ /home/langmk4v/luactrpf/include/types.h \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Graphics/OSD.hpp \
  /opt/devkitpro/libctru/include/3ds.h \
  /opt/devkitpro/libctru/include/3ds/types.h \
  /opt/devkitpro/libctru/include/3ds/result.h \
@@ -86,9 +90,55 @@ plugin.o: /home/langmk4v/RingoCTRPF3gx/PluginFolder/src/plugin.cpp \
  /opt/devkitpro/libctru/include/3ds/font.h \
  /opt/devkitpro/libctru/include/3ds/gdbhio_dev.h \
  /opt/devkitpro/libctru/include/3ds/3dslink.h \
- /home/langmk4v/RingoCTRPF3gx/PluginFolder/Atom/Memory.hpp \
- /home/langmk4v/RingoCTRPF3gx/PluginFolder/Atom/types.hpp
-/home/langmk4v/RingoCTRPF3gx/PluginFolder/Atom/Program.hpp:
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Graphics/Render.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Graphics/CustomIcon.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Rect.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Vector.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Utils/Utils.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Process.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Menu.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Menu/Keyboard.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Controller.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Vector.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Sound.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Sound/Sound.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Sound/SoundEngine.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Menu/MenuEntry.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Menu/MenuEntryHotkeys.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Menu/MenuEntryHotkeys.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Menu/MenuFolder.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Menu/PluginMenu.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Time.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Menu/MessageBox.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Sound.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Clock.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Directory.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/File.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Mutex.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/FwkSettings.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Hook.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Lock.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/System.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Task.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Thread.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Touch.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Sleep.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Utils.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Utils/LineReader.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Utils/LineWriter.hpp \
+ /opt/devkitpro/libctrpf/include/CTRPluginFramework/Utils/StringExtensions.hpp \
+ /home/langmk4v/luactrpf/include/lua/SourceFile.hpp \
+ /home/langmk4v/luactrpf/include/lua/Token.hpp \
+ /home/langmk4v/luactrpf/include/types.hpp \
+ /home/langmk4v/luactrpf/include/lua/ASTFwd.hpp \
+ /home/langmk4v/luactrpf/include/lua/Lexer.hpp \
+ /home/langmk4v/luactrpf/include/lua/Parser.hpp
+/opt/devkitpro/libctrpf/include/CTRPluginFramework.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Graphics.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Graphics/Color.hpp:
+/home/langmk4v/luactrpf/include/types.h:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Graphics/OSD.hpp:
 /opt/devkitpro/libctru/include/3ds.h:
 /opt/devkitpro/libctru/include/3ds/types.h:
 /opt/devkitpro/libctru/include/3ds/result.h:
@@ -175,5 +225,47 @@ plugin.o: /home/langmk4v/RingoCTRPF3gx/PluginFolder/src/plugin.cpp \
 /opt/devkitpro/libctru/include/3ds/font.h:
 /opt/devkitpro/libctru/include/3ds/gdbhio_dev.h:
 /opt/devkitpro/libctru/include/3ds/3dslink.h:
-/home/langmk4v/RingoCTRPF3gx/PluginFolder/Atom/Memory.hpp:
-/home/langmk4v/RingoCTRPF3gx/PluginFolder/Atom/types.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Graphics/Render.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Graphics/CustomIcon.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Rect.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Vector.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Utils/Utils.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Process.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Menu.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Menu/Keyboard.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Controller.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Vector.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Sound.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Sound/Sound.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Sound/SoundEngine.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Menu/MenuEntry.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Menu/MenuEntryHotkeys.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Menu/MenuEntryHotkeys.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Menu/MenuFolder.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Menu/PluginMenu.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Time.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Menu/MessageBox.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Sound.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Clock.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Directory.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/File.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Mutex.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/FwkSettings.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Hook.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Lock.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/System.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Task.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Thread.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Touch.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/System/Sleep.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Utils.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Utils/LineReader.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Utils/LineWriter.hpp:
+/opt/devkitpro/libctrpf/include/CTRPluginFramework/Utils/StringExtensions.hpp:
+/home/langmk4v/luactrpf/include/lua/SourceFile.hpp:
+/home/langmk4v/luactrpf/include/lua/Token.hpp:
+/home/langmk4v/luactrpf/include/types.hpp:
+/home/langmk4v/luactrpf/include/lua/ASTFwd.hpp:
+/home/langmk4v/luactrpf/include/lua/Lexer.hpp:
+/home/langmk4v/luactrpf/include/lua/Parser.hpp:

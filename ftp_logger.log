@@ -1,0 +1,52 @@
+2026-01-10 18:45:00,959:__main__:INFO:===START FTP===
+2026-01-10 18:45:00,959:__main__:INFO:{'action': 'ftp_upload', 'status': 'run'}
+2026-01-10 18:45:04,085:__main__:INFO:{'action': 'ftp_upload', 'status': 'success'}
+2026-01-10 18:45:04,086:__main__:INFO:===FINISH FTP===
+2026-01-10 19:21:58,155:__main__:INFO:===START FTP===
+2026-01-10 19:21:58,155:__main__:INFO:{'action': 'ftp_upload', 'status': 'run'}
+2026-01-10 19:22:01,829:__main__:INFO:{'action': 'ftp_upload', 'status': 'success'}
+2026-01-10 19:22:01,829:__main__:INFO:{'action': 'ftp_upload', 'status': 'run'}
+2026-01-10 19:22:01,992:__main__:INFO:{'action': 'ftp_upload', 'status': 'success'}
+2026-01-10 19:22:01,992:__main__:INFO:===FINISH FTP===
+2026-01-10 19:44:42,545:__main__:INFO:===START FTP===
+2026-01-10 19:44:42,545:__main__:INFO:{'action': 'ftp_upload', 'status': 'run'}
+2026-01-10 19:44:43,790:__main__:INFO:{'action': 'ftp_upload', 'status': 'success'}
+2026-01-10 19:44:43,790:__main__:INFO:{'action': 'ftp_upload', 'status': 'run'}
+2026-01-10 19:44:44,263:__main__:INFO:{'action': 'ftp_upload', 'status': 'success'}
+2026-01-10 19:44:44,264:__main__:INFO:===FINISH FTP===
+2026-01-11 10:46:03,004:__main__:INFO:===START FTP===
+2026-01-11 10:46:03,004:__main__:INFO:{'action': 'ftp_upload', 'status': 'run'}
+2026-01-11 10:46:06,107:__main__:ERROR:{'action': 'ftp_upload', 'message': 'FTP error = [Errno 113] No route to host'}
+2026-01-11 10:46:06,107:__main__:INFO:{'action': 'ftp_upload', 'status': 'success'}
+2026-01-11 10:46:06,107:__main__:INFO:{'action': 'ftp_upload', 'status': 'run'}
+2026-01-11 10:46:09,179:__main__:ERROR:{'action': 'ftp_upload', 'message': 'FTP error = [Errno 113] No route to host'}
+2026-01-11 10:46:09,179:__main__:INFO:{'action': 'ftp_upload', 'status': 'success'}
+2026-01-11 10:46:09,179:__main__:INFO:===FINISH FTP===
+2026-01-11 10:46:13,019:__main__:INFO:===START FTP===
+2026-01-11 10:46:13,019:__main__:INFO:{'action': 'ftp_upload', 'status': 'run'}
+2026-01-11 10:46:16,090:__main__:ERROR:{'action': 'ftp_upload', 'message': 'FTP error = [Errno 113] No route to host'}
+2026-01-11 10:46:16,090:__main__:INFO:{'action': 'ftp_upload', 'status': 'success'}
+2026-01-11 10:46:16,090:__main__:INFO:{'action': 'ftp_upload', 'status': 'run'}
+2026-01-11 10:46:19,163:__main__:ERROR:{'action': 'ftp_upload', 'message': 'FTP error = [Errno 113] No route to host'}
+2026-01-11 10:46:19,163:__main__:INFO:{'action': 'ftp_upload', 'status': 'success'}
+2026-01-11 10:46:19,163:__main__:INFO:===FINISH FTP===
+2026-01-11 10:49:56,154:__main__:INFO:===START FTP===
+2026-01-11 10:49:56,156:__main__:INFO:{'action': 'ftp_upload', 'status': 'run'}
+2026-01-11 10:49:59,259:__main__:ERROR:{'action': 'ftp_upload', 'message': 'FTP error = [Errno 113] No route to host'}
+2026-01-11 10:49:59,259:__main__:INFO:{'action': 'ftp_upload', 'status': 'success'}
+2026-01-11 10:49:59,259:__main__:INFO:{'action': 'ftp_upload', 'status': 'run'}
+2026-01-11 10:50:02,330:__main__:ERROR:{'action': 'ftp_upload', 'message': 'FTP error = [Errno 113] No route to host'}
+2026-01-11 10:50:02,330:__main__:INFO:{'action': 'ftp_upload', 'status': 'success'}
+2026-01-11 10:50:02,331:__main__:INFO:===FINISH FTP===
+2026-01-11 10:58:27,449:__main__:INFO:===START FTP===
+2026-01-11 10:58:27,450:__main__:INFO:{'action': 'ftp_upload', 'status': 'run'}
+2026-01-11 10:58:29,407:__main__:INFO:{'action': 'ftp_upload', 'status': 'success'}
+2026-01-11 10:58:29,407:__main__:INFO:{'action': 'ftp_upload', 'status': 'run'}
+2026-01-11 10:58:29,548:__main__:INFO:{'action': 'ftp_upload', 'status': 'success'}
+2026-01-11 10:58:29,548:__main__:INFO:===FINISH FTP===
+2026-01-11 11:02:05,731:__main__:INFO:===START FTP===
+2026-01-11 11:02:05,731:__main__:INFO:{'action': 'ftp_upload', 'status': 'run'}
+2026-01-11 11:02:07,384:__main__:INFO:{'action': 'ftp_upload', 'status': 'success'}
+2026-01-11 11:02:07,384:__main__:INFO:{'action': 'ftp_upload', 'status': 'run'}
+2026-01-11 11:02:07,533:__main__:INFO:{'action': 'ftp_upload', 'status': 'success'}
+2026-01-11 11:02:07,533:__main__:INFO:===FINISH FTP===
