@@ -1,4 +1,8 @@
 /release
 /debug
-/Build
-/objects
+/build
+
+*.3gx
+*.elf
+
+test.*

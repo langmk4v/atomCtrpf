@@ -1,6 +1,7 @@
 #pragma once
 
 #include <vector>
+#include <CTRPluginFramework/System/File.hpp>
 
 #include "Token.hpp"
 #include "ASTFwd.hpp"
@@ -12,10 +13,11 @@ class Parser;
 
 struct SourceFile {
   std::string path;
-
   std::string data;
 
   std::vector<SourceFile*> imports;
+
+  File file;
 
   Lexer* lexer;
   Parser* parser;

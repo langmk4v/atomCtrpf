@@ -134,7 +134,7 @@ class Lexer {
     { while (!this->is_end() && std::isspace(this->peek())) this->next(); }
 
   void pass_comments();
-  bool pass_line_comment();
+  bool pass_comment();
   bool pass_block_comment();
 
   bool match(char);

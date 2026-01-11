@@ -10,6 +10,22 @@ auto entry_test(MenuEntry* e) -> void {
 
   ctx->eval();
 
+  if (Controller::IsKeyPressed(Key::X)) {
+
+    std::string msg;
+
+    for (auto tok = ctx->get_token(); !tok->is_eof(); tok = tok->next) {
+      msg += tok->get_strview();
+      msg += " ";
+    }
+
+    (MessageBox(msg))();
+  }
+
+  if (Controller::IsKeyPressed(Key::L)) {
+    OSD::Notify(Utils::Format("%08X", (u32)ctx));
+  }
+
 }
 
 auto init_menu(PluginMenu& menu) -> void {

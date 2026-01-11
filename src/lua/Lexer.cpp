@@ -244,20 +244,27 @@ auto Lexer::get_str_id(char const* ptr, size_t len) -> StringID {
 void Lexer::pass_comments() {
   while (!this->is_end()) {
     this->pass_space();
-    if (!this->pass_line_comment() && !this->pass_block_comment()) break;
+    if (!this->pass_comment()) break;
   }
 }
 
-bool Lexer::pass_line_comment() {
+bool Lexer::pass_comment() {
   if (this->consume_str("--")) {
-    while (!this->is_end() && !this->consume('\n')) this->next();
+    while (!this->is_end() && !this->consume('\n')) {
+      if (this->match_str("[[")) {
+        this->pass_block_comment();
+        break;
+      }
+
+      this->next();
+    }
     return true;
   } else
     return false;
 }
 
 bool Lexer::pass_block_comment() {
-  if (this->consume_str("--[[")) {
+  if (this->consume_str("[[")) {
     while (!this->is_end() && !this->consume_str("]]")) this->next();
     return true;
   } else

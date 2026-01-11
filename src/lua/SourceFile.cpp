@@ -1,5 +1,3 @@
-#include <iostream>
-#include <fstream>
 #include <filesystem>
 
 #include "CTRPluginFramework.hpp"
@@ -14,6 +12,7 @@ SourceFile::SourceFile(std::string const& path)
   : path(path),
     data(),
     imports(),
+    file(path),
     lexer(new Lexer(this)),
     parser(new Parser(this)),
     token(nullptr),
@@ -27,16 +26,17 @@ SourceFile::~SourceFile() {
 }
 
 bool SourceFile::read() {
-  std::string line;
 
-  std::ifstream ifs{this->path};
-
-  if (ifs.fail()) {
+  if (!this->file.IsOpen()) {
     (MessageBox("fail"))();
     return false;
   }
 
-  while (std::getline(ifs, line)) {
+  auto reader = LineReader(this->file);
+
+  std::string line;
+
+  while (reader(line)) {
     line.push_back('\n');
     this->data.append(line);
   }

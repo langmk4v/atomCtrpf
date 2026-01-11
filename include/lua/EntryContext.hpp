@@ -1,6 +1,7 @@
 #pragma once
 
 #include <CTRPluginFramework/Menu/MenuEntry.hpp>
+#include <CTRPluginFramework/Menu/MessageBox.hpp>
 
 #include "SourceFile.hpp"
 #include "Parser.hpp"
@@ -15,6 +16,9 @@ struct EntryContext {
   auto is_parsed() -> bool {
     return this->source.parsed_tree != nullptr;
   }
+
+  auto get_token() -> Token*
+    { return this->source.token; }
 
   auto lex() -> void {
     this->source.token = this->source.lexer->lex();
@@ -38,6 +42,10 @@ struct EntryContext {
 static auto make_entry(std::string const& path, MenuEntry* e) -> MenuEntry* {
 
   auto* ctx = new EntryContext(path);
+
+  if (!ctx->source.read()) {
+    OSD::Notify("failed to read '" + ctx->source.path + "'");
+  }
 
   ctx->lex();
   ctx->parse();
